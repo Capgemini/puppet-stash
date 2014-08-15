@@ -15,9 +15,6 @@ describe 'stash::install' do
       :webappdir => '/opt/stash/atlassian-stash-2.12.0'
       }}
 
-    it 'should install, but not upgrade, git' do
-      should contain_package('git').with_ensure('installed')
-    end
     it { should contain_group('stash') }
     it { should contain_user('stash').with_shell('/bin/bash') }
     it 'should deploy stash 2.12.0 from tar.gz' do
